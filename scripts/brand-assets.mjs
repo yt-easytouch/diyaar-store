@@ -9,8 +9,11 @@ const MARK = readFileSync("logo/diyaar-mark.svg", "utf8").match(/ d="([^"]+)"/)[
 const MARK_W = 300;
 const MARK_H = 315.5;
 
+/** Mark height as a share of the icon: the original artwork (315.5/670) made 20% bigger so it reads like other app icons. */
+const ICON_SCALE = (315.5 / 670) * 1.2;
+
 /** SVG of the mark centred on a square canvas. `scale` is the mark's height as a share of the canvas. */
-function markSvg(size, { bg, scale = 315.5 / 670, radius = 0 } = {}) {
+function markSvg(size, { bg, scale = ICON_SCALE, radius = 0 } = {}) {
   const k = (size * scale) / MARK_H;
   const x = (size - MARK_W * k) / 2;
   const y = (size - MARK_H * k) / 2;
