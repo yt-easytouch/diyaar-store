@@ -1,4 +1,4 @@
-package so.diyaar.store;
+package so.diyaar.business;
 
 import com.getcapacitor.BridgeActivity;
 

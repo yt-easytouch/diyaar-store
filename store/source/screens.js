@@ -1,4 +1,4 @@
-/* Diyaar Store — app screen mockups for store artwork.
+/* Business (Diyaar) — app screen mockups for store artwork.
    Each builder returns HTML for one screen at real device px (ctx.w × ctx.h).
    They mirror src/mobile/screens/* (Konsta UI, iOS theme on every device) with demo data.
    Loaded as a classic script so it works over file:// in headless Chrome. */
@@ -131,7 +131,7 @@
         <div style="margin:0 -16px">${statusBar(ctx, true)}</div>
         <div class="rel row" style="align-items:flex-start;gap:12px;margin-top:6px">
           <div style="flex:1;min-width:0">
-            <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.75">Diyaar Store</div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.75">Business</div>
             <div style="font-size:22px;font-weight:800;letter-spacing:-.4px;margin-top:2px">Open for orders</div>
             <div class="row" style="gap:3px;font-size:13px;font-weight:500;opacity:.88;margin-top:2px">Kulan Café · Hodan ${I('down', 16, '#fff', 2.2)}</div>
           </div>

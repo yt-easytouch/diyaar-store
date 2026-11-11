@@ -84,7 +84,7 @@ interface Slide {
 const SLIDES: Slide[] = [
   {
     title: "Your store, in your pocket",
-    text: "Restaurant, pharmacy, supermarket or shop: run your Diyaar store from your phone, wherever you are.",
+    text: "Restaurant, pharmacy, supermarket or shop: run your Diyaar business from your phone, wherever you are.",
     media: <IntroVideo className="h-full w-full" />,
   },
   {

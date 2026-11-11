@@ -1,4 +1,4 @@
-# Diyaar Store: Store Listing
+# Business (by Diyaar): Store Listing
 
 Copy-paste text for **App Store Connect** and **Google Play Console**.
 Character counts are shown as `(used/limit)`. Fields marked **TODO** need a real value before you submit.
@@ -11,8 +11,8 @@ Character counts are shown as `(used/limit)`. Fields marked **TODO** need a real
 
 | Field | Value |
 |---|---|
-| App name | **Diyaar Store** |
-| Bundle ID / Package | `so.diyaar.store` |
+| App name | **Business** |
+| Bundle ID / Package | `so.diyaar.business` |
 | Developer / Seller | **TODO**: legal entity name (e.g. Diyaar / Yooltech) |
 | Website | https://diyaar.so |
 | Privacy policy | https://diyaar.so/privacy *(make sure the page is live and mentions store partners)* |
@@ -28,10 +28,11 @@ Character counts are shown as `(used/limit)`. Fields marked **TODO** need a real
 
 ## 🍏 App Store (iOS)
 
-### Name `(12/30)`
+### Name `(8/30)`
 ```
-Diyaar Store
+Business
 ```
+*"Business" on its own is a common word. If App Store Connect or Play says the name is taken, use `Business by Diyaar` (18/30) or `Diyaar Business` (15/30). The label under the phone icon can stay "Business" either way.*
 
 ### Subtitle `(29/30)`
 ```
@@ -45,15 +46,15 @@ Orders, menu & sales, all set
 New orders ring in, you tap Accept. Update prices, mark items sold out, follow today's sales and your payout, and open or close your store in one tap. ⚡
 ```
 
-### Keywords `(96/100)`
-*Comma-separated, no spaces. Don't repeat words from the name ("Diyaar", "Store"). Apple already indexes those.*
+### Keywords `(100/100)`
+*Comma-separated, no spaces. Don't repeat words from the name ("Business"). Apple already indexes those.*
 ```
-merchant,orders,seller,shop,sales,business,inventory,delivery,grocery,pharmacy,Somalia,Mogadishu
+merchant,orders,seller,shop,sales,diyaar,store,inventory,delivery,grocery,pharmacy,Somalia,Mogadishu
 ```
 
 ### Description `(≤4000)`
 ```
-Diyaar Store is the app for Diyaar partner stores. Accept orders, keep your menu up to date, follow your sales and see what you've earned, all from your phone.
+Business is the Diyaar app for partner stores. Accept orders, keep your menu up to date, follow your sales and see what you've earned, all from your phone.
 
 NEVER MISS AN ORDER
 • New orders ring in with a sound and a vibration
@@ -91,13 +92,13 @@ YOUR STORE, YOUR RULES
 
 Light and dark themes included.
 
-Diyaar Store is for stores that sell on Diyaar. To become a partner, visit diyaar.so.
+Business is for stores that sell on Diyaar. To become a partner, visit diyaar.so.
 Questions? Visit diyaar.so or contact Diyaar support.
 ```
 
 ### What's New (release notes) `(≤4000)`
 ```
-Welcome to Diyaar Store! 💚
+Welcome to Business by Diyaar! 💚
 • Accept orders and move them from Cooking to Ready
 • Update your menu, prices and stock on the go
 • Follow today's sales, your payout and your reviews
@@ -161,10 +162,11 @@ Contact: **TODO** name, phone and email of someone who answers during review.
 
 ## 🤖 Google Play (Android)
 
-### App name `(12/30)`
+### App name `(8/30)`
 ```
-Diyaar Store
+Business
 ```
+*"Business" on its own is a common word. If App Store Connect or Play says the name is taken, use `Business by Diyaar` (18/30) or `Diyaar Business` (15/30). The label under the phone icon can stay "Business" either way.*
 
 ### Short description `(73/80)`
 ```
@@ -247,4 +249,4 @@ Edit captions in [`source/shot.html`](source/shot.html) (`SHOTS`) and re-run `ba
 ---
 
 ## 🌍 Localization (later)
-The app is English-only today. If the app gets Somali (and Arabic) translations, add translated listings too (the name stays "Diyaar Store"): have a native speaker translate the subtitle, short description, description and screenshot captions, then add `?lang=` support to `shot.html` or copy it per language.
+The app is English-only today. If the app gets Somali (and Arabic) translations, add translated listings too (the name stays "Business"): have a native speaker translate the subtitle, short description, description and screenshot captions, then add `?lang=` support to `shot.html` or copy it per language.

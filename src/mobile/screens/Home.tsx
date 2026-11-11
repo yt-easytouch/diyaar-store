@@ -149,7 +149,7 @@ export default function HomeScreen() {
         <div ref={heroRef} className="relative origin-top will-change-transform">
         <div className="relative flex items-start gap-3">
           <button onClick={() => go("/store")} className="min-w-0 flex-1 text-left">
-            <p className="text-[12px] font-bold uppercase tracking-wider text-white/75">Diyaar Store</p>
+            <p className="text-[12px] font-bold uppercase tracking-wider text-white/75">Business</p>
             <p className="mt-0.5 truncate text-[22px] font-extrabold leading-tight tracking-tight">{open ? (store?.busy_mode ? "Busy right now" : "Open for orders") : "Store is closed"}</p>
             <p className="mt-0.5 flex items-center gap-1 text-[13px] font-medium text-white/85">
               <span className="truncate">{store?.store_name}</span>

@@ -11,7 +11,7 @@ const toNumber = (value: string | undefined, fallback: number) => {
 };
 
 export const env = {
-  appName: raw.VITE_APP_NAME || "Diyaar Store",
+  appName: raw.VITE_APP_NAME || "Business",
   currency: raw.VITE_DEFAULT_CURRENCY || "USD",
   locale: raw.VITE_DEFAULT_LOCALE || "en-US",
   apiBaseUrl: (raw.VITE_API_BASE_URL || "https://diyaar-app.easytouch.cloud").replace(/\/$/, ""),

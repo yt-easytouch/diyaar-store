@@ -105,7 +105,7 @@ export default function LoginPage() {
 
         <div className="relative mx-auto flex max-w-sm flex-col items-center px-6 pt-10 text-center sm:pt-14">
           <LogoMark className="h-16 w-16 rounded-[1.25rem] shadow-2xl shadow-black/50 ring-2 ring-white/40 backdrop-blur-sm" />
-          <h1 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight drop-shadow-md">Diyaar Store</h1>
+          <h1 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight drop-shadow-md">Business</h1>
           <p className="mt-0.5 text-xs sm:text-sm font-medium text-white/90 drop-shadow-md">Your orders, menu and earnings — in your pocket</p>
         </div>
 
