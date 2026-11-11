@@ -2,7 +2,7 @@ import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
   appId: "so.diyaar.business",
-  appName: "Business",
+  appName: "Diyaar Business",
   webDir: "dist",
   server: {
     iosScheme: "https",

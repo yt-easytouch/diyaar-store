@@ -1,6 +1,6 @@
-# Business (by Diyaar): Store Kit
+# Diyaar Business: Store Kit
 
-Everything you need to publish **Business** (`so.diyaar.business`) on the **App Store** and **Google Play**: screenshots, icons, the feature graphic, listing text, the exact sizes each store wants, and a checklist so nothing bounces in review.
+Everything you need to publish **Diyaar Business** (`so.diyaar.business`) on the **App Store** and **Google Play**: screenshots, icons, the feature graphic, listing text, the exact sizes each store wants, and a checklist so nothing bounces in review.
 
 ```
 store/
@@ -96,7 +96,7 @@ Everything here was checked after rendering: exact pixel sizes ✓, **no alpha c
    - `npm run ios` (builds the web app, syncs, opens Xcode).
    - In Xcode: bump **Version** (`MARKETING_VERSION`) and **Build** (`CURRENT_PROJECT_VERSION`), select *Any iOS Device (arm64)* → **Product › Archive** → **Distribute App › App Store Connect › Upload**.
 2. **App Store Connect → Apps → ➕ New App** (first time only)
-   - Platform iOS · Name **Business** · Language English (U.S.) · Bundle ID `so.diyaar.business` · SKU e.g. `diyaar-business-ios`.
+   - Platform iOS · Name **Diyaar Business** · Language English (U.S.) · Bundle ID `so.diyaar.business` · SKU e.g. `diyaar-business-ios`.
 3. **App Information**: subtitle, categories (Business / Productivity), privacy policy URL, age rating questionnaire, content rights. Everything is in `STORE_LISTING.md`.
 4. **App Privacy**: answer using the table in `STORE_LISTING.md`.
 5. **Version page (1.0 Prepare for Submission)**
@@ -114,7 +114,7 @@ Everything here was checked after rendering: exact pixel sizes ✓, **no alpha c
    - Bump `versionCode` / `versionName` in `android/app/build.gradle`.
    - `npm run android` (builds, syncs, opens Android Studio).
    - **Build › Generate Signed App Bundle (.aab)** with your upload key (keep the keystore + passwords somewhere safe; losing them means contacting Google support).
-2. **Play Console → Create app**: name **Business**, App, Free, accept declarations.
+2. **Play Console → Create app**: name **Diyaar Business**, App, Free, accept declarations.
 3. **Dashboard › Set up your app** (each must be ✅):
    - App access → demo email + password ("Tap *Sign in with email instead*")
    - Ads → **No**

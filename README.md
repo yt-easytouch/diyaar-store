@@ -1,4 +1,4 @@
-# Business by Diyaar (Store Portal)
+# Diyaar Business (Store Portal)
 
 The phone app for **store teams** on Diyaar. Owners and staff use it to accept orders, keep the menu up to date, follow sales and see their earnings.
 It talks to the live Diyaar backend (`diyaar_backend`) through the same store-portal endpoints as the web admin panel at
@@ -19,7 +19,7 @@ In the browser, the dev server forwards `/api` and `/files` to the backend, so t
 
 ## Mobile app (iOS & Android)
 
-The app ships as a native app called **Business** (`so.diyaar.business`), built with Capacitor 8 like the customer and driver apps.
+The app ships as a native app called **Diyaar Business** (`so.diyaar.business`), built with Capacitor 8 like the customer and driver apps.
 
 ```bash
 npm run ios        # build → sync → open Xcode (then ▶ Run on a simulator or iPhone)

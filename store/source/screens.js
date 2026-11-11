@@ -1,4 +1,4 @@
-/* Business (Diyaar) — app screen mockups for store artwork.
+/* Diyaar Business — app screen mockups for store artwork.
    Each builder returns HTML for one screen at real device px (ctx.w × ctx.h).
    They mirror src/mobile/screens/* (Konsta UI, iOS theme on every device) with demo data.
    Loaded as a classic script so it works over file:// in headless Chrome. */
