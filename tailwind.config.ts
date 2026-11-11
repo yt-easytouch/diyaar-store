@@ -5,7 +5,7 @@ import konstaConfig from "konsta/config";
 
 export default konstaConfig({
   konsta: {
-    colors: { primary: "#BEFF00" },
+    colors: { primary: "#00E784" },
   },
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
@@ -76,7 +76,7 @@ export default konstaConfig({
           ring: "hsl(var(--sidebar-ring) / <alpha-value>)",
         },
       },
-      // Lime is too light for text on white, so text-primary uses the ink shade (olive in light, lime in dark).
+      // Brand green is too light for text on white, so text-primary uses the ink shade (dark green in light, brand green in dark).
       textColor: {
         primary: {
           DEFAULT: "hsl(var(--primary-ink) / <alpha-value>)",

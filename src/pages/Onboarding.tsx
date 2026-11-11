@@ -7,11 +7,11 @@ import { cn } from "@/lib/utils";
 /** Slide 2: a new order arriving, written so it fits any kind of store. */
 function OrderArt() {
   return (
-    <div className="relative flex h-full items-center justify-center bg-gradient-to-br from-[#3fd0bd] via-[#219186] to-[#0f4f48] pb-[34vh]">
+    <div className="relative flex h-full items-center justify-center bg-gradient-to-br from-[#00684f] via-[#003a31] to-[#00231F] pb-[34vh]">
       <span className="absolute -left-10 top-16 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
-      <span className="absolute -right-8 bottom-10 h-40 w-40 rounded-full bg-[#BEFF00]/20 blur-2xl" />
+      <span className="absolute -right-8 bottom-10 h-40 w-40 rounded-full bg-[#00E784]/20 blur-2xl" />
       <div className="relative w-[78%] max-w-[300px]">
-        <span className="absolute -right-4 -top-5 z-10 flex h-12 w-12 animate-bounce items-center justify-center rounded-full bg-[#BEFF00] text-[#2B330F] shadow-lg">
+        <span className="absolute -right-4 -top-5 z-10 flex h-12 w-12 animate-bounce items-center justify-center rounded-full bg-[#00E784] text-[#00231F] shadow-lg">
           <Bell className="h-6 w-6" strokeWidth={2.4} />
         </span>
         <div className="rotate-[-3deg] rounded-3xl bg-white p-4 text-[#1c1c1e] shadow-[0_24px_48px_-16px_rgba(0,0,0,0.45)]">
@@ -35,7 +35,7 @@ function OrderArt() {
           </div>
           <div className="mt-4 flex items-center justify-between border-t border-dashed border-black/10 pt-3">
             <span className="tabular text-[18px] font-extrabold">$24.50</span>
-            <span className="flex items-center gap-1 rounded-xl bg-[#BEFF00] px-3.5 py-2 text-[14px] font-bold text-[#2B330F]">
+            <span className="flex items-center gap-1 rounded-xl bg-[#00E784] px-3.5 py-2 text-[14px] font-bold text-[#00231F]">
               <Check className="h-4 w-4" strokeWidth={3} /> Accept
             </span>
           </div>
@@ -56,19 +56,19 @@ function ProductsArt() {
     ["📱", "Charger", "bg-[#ffeef2]", true],
   ];
   return (
-    <div className="relative flex h-full items-center justify-center bg-gradient-to-b from-[#2aa898] via-[#16685f] to-[#0b3b36] pb-[34vh]">
+    <div className="relative flex h-full items-center justify-center bg-gradient-to-b from-[#00543f] via-[#00332b] to-[#001a17] pb-[34vh]">
       <div className="relative grid w-[80%] max-w-[310px] grid-cols-3 gap-2.5">
         {items.map(([emoji, label, tint, inStock], i) => (
-          <div key={label} className={cn("rounded-2xl bg-white p-2 shadow-[0_10px_24px_-14px_rgba(15,79,72,0.5)] dark:bg-[#1c1c1d]", i % 2 ? "translate-y-3" : "")}>
+          <div key={label} className={cn("rounded-2xl bg-white p-2 shadow-[0_10px_24px_-14px_rgba(0,35,31,0.5)] dark:bg-[#1c1c1d]", i % 2 ? "translate-y-3" : "")}>
             <div className={cn("flex aspect-square items-center justify-center rounded-xl text-[30px]", tint, !inStock && "opacity-40 grayscale")}>{emoji}</div>
             <p className="mt-1.5 truncate text-[11px] font-bold text-[#1c1c1e] dark:text-white">{label}</p>
-            <span className={cn("mt-1 inline-block rounded-md px-1.5 text-[9px] font-extrabold uppercase leading-[15px]", inStock ? "bg-[#BEFF00]/25 text-[#2B330F] dark:bg-[#BEFF00]/15 dark:text-[#BEFF00]" : "bg-black/[0.06] text-black/45 dark:bg-white/10 dark:text-white/55")}>
+            <span className={cn("mt-1 inline-block rounded-md px-1.5 text-[9px] font-extrabold uppercase leading-[15px]", inStock ? "bg-[#EAFFED] text-[#00231F] dark:bg-[#00E784]/15 dark:text-[#00E784]" : "bg-black/[0.06] text-black/45 dark:bg-white/10 dark:text-white/55")}>
               {inStock ? "In stock" : "Sold out"}
             </span>
           </div>
         ))}
         <span className="absolute -bottom-9 -right-3 flex items-center gap-1.5 rounded-2xl bg-[#1c1c1e] px-3 py-2 text-[13px] font-bold text-white shadow-lg">
-          <BarChart3 className="h-4 w-4 text-[#BEFF00]" /> +18% sales
+          <BarChart3 className="h-4 w-4 text-[#00E784]" /> +18% sales
         </span>
       </div>
     </div>
@@ -152,7 +152,7 @@ export default function OnboardingPage({ onDone }: { onDone: () => void }) {
       <div className="absolute inset-x-0 bottom-0 flex items-center justify-between px-7 pb-[calc(env(safe-area-inset-bottom)+28px)]">
         <div className="flex gap-1.5">
           {SLIDES.map((s, i) => (
-            <button key={s.title} type="button" aria-label={`Slide ${i + 1}`} onClick={() => goTo(i)} className={cn("h-2 rounded-full transition-all duration-300", i === index ? "w-6 bg-[#BEFF00]" : "w-2 bg-white/35")} />
+            <button key={s.title} type="button" aria-label={`Slide ${i + 1}`} onClick={() => goTo(i)} className={cn("h-2 rounded-full transition-all duration-300", i === index ? "w-6 bg-[#00E784]" : "w-2 bg-white/35")} />
           ))}
         </div>
         <button

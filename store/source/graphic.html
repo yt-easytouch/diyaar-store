@@ -6,17 +6,17 @@
 <link rel="stylesheet" href="styles.css">
 <style>
   .fg { position: absolute; inset: 0; overflow: hidden;
-    background: radial-gradient(90% 120% at 78% 40%, #4F6119 0%, var(--olive) 55%, #1E2408 100%); }
+    background: radial-gradient(90% 120% at 78% 40%, #00684F 0%, var(--deep) 55%, #00130F 100%); }
   .fg .txt { position: absolute; left: 64px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; color: #fff; z-index: 5; }
-  .fg .logo { width: 92px; height: 92px; border-radius: 28px; background: var(--lime); display: grid; place-items: center;
-    box-shadow: 0 10px 30px rgba(190,255,0,.35); transform: rotate(-6deg); }
-  .fg .logo img { width: 62px; filter: brightness(0) saturate(100%) invert(14%) sepia(31%) saturate(1200%) hue-rotate(38deg); }
+  .fg .logo { width: 92px; height: 92px; border-radius: 22%; overflow: hidden; transform: rotate(-6deg);
+    box-shadow: 0 10px 30px rgba(0,231,132,.25), 0 0 0 2px rgba(255,255,255,.14); }
+  .fg .logo img { width: 100%; height: 100%; display: block; }
   .fg h1 { font: 600 70px/1 'Fredoka', sans-serif; letter-spacing: -1px; margin-top: 24px; }
-  .fg h2 { font: 600 34px/1.1 'Fredoka', sans-serif; color: var(--lime); margin-top: 10px; }
+  .fg h2 { font: 600 34px/1.1 'Fredoka', sans-serif; color: var(--green); margin-top: 10px; }
   .fg .chips { display: flex; gap: 10px; margin-top: 24px; }
   .fg .chip2 { font: 700 17px/1 'Nunito', sans-serif; padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,.1); color: #fff; border: 1.5px solid rgba(255,255,255,.14); }
   .fg .ph { position: absolute; transform-origin: top left; }
-  .ic { position: absolute; inset: 0; background: #2C330F; display: grid; place-items: center; }
+  .ic { position: absolute; inset: 0; background: var(--deep); display: grid; place-items: center; }
   .ic img { width: 100%; height: 100%; }
 </style>
 </head>
@@ -55,25 +55,25 @@ if (g === 'icon') {
   const sticker = (x, y, rot, cls, html) =>
     `<div class="sticker ${cls}" style="left:${x}px;top:${y}px;z-index:9;font-size:${fs}px;transform:rotate(${rot}deg)">${html}</div>`;
   root.innerHTML = `
-    <div class="fg" style="background:radial-gradient(70% 90% at 50% 30%, #55691B 0%, var(--olive) 55%, #1B2008 100%)">
-      <div class="blob" style="left:${960 - 450}px;top:${LH * 0.05}px;width:900px;height:900px;background:#BEFF00;opacity:.09"></div>
-      <div class="blob" style="left:-220px;top:${LH * 0.55}px;width:600px;height:600px;background:#BEFF00;opacity:.06"></div>
+    <div class="fg" style="background:radial-gradient(70% 90% at 50% 30%, #00684F 0%, var(--deep) 55%, #00130F 100%)">
+      <div class="blob" style="left:${960 - 450}px;top:${LH * 0.05}px;width:900px;height:900px;background:#00E784;opacity:.09"></div>
+      <div class="blob" style="left:-220px;top:${LH * 0.55}px;width:600px;height:600px;background:#00E784;opacity:.06"></div>
       <div class="blob" style="left:1560px;top:-260px;width:600px;height:600px;background:#fff;opacity:.04"></div>
-      <div class="dots" style="left:60px;top:${oy + 823 * u * 0.08}px;width:260px;height:220px;color:#BEFF00;opacity:.2"></div>
-      <div class="dots" style="left:1600px;top:${LH * 0.6}px;width:260px;height:220px;color:#BEFF00;opacity:.2"></div>
+      <div class="dots" style="left:60px;top:${oy + 823 * u * 0.08}px;width:260px;height:220px;color:#00E784;opacity:.2"></div>
+      <div class="dots" style="left:1600px;top:${LH * 0.6}px;width:260px;height:220px;color:#00E784;opacity:.2"></div>
       ${phone('detail', -820, oy + 823 * u * 0.26, -14, kc * 0.78, 1)}
       ${phone('reviews', 820, oy + 823 * u * 0.26, 14, kc * 0.78, 1)}
       ${phone('home', -430 * u, oy + 823 * u * 0.16, -8, kc * 0.88, 2)}
       ${phone('earnings', 430 * u, oy + 823 * u * 0.16, 8, kc * 0.88, 2)}
       ${phone('orders', 0, oy + 823 * u * 0.08, 0, kc, 3)}
-      ${sticker(960 - 470 * u, oy + 823 * u * 0.13, -8, 'lime big', '<span class="em">🛎️</span> Ding ding!')}
+      ${sticker(960 - 470 * u, oy + 823 * u * 0.13, -8, 'green big', '<span class="em">🛎️</span> Ding ding!')}
       ${sticker(960 + 200 * u, oy + 823 * u * 0.40, 7, '', '<span class="em">💚</span> +$18.50')}
       ${sticker(960 - 720 * u, oy + 823 * u * 0.52, -6, '', '<span class="em">📈</span> +18% today')}
       ${sticker(960 + 560 * u, oy + 823 * u * 0.12, 6, 'dark', '<span class="em">⭐</span> <b>4.8 rating</b>')}
-      <div class="decor" style="left:${960 - 260 * u}px;top:${oy + 823 * u * 0.04}px;z-index:9">${sparkle(48 * u, '#BEFF00', 10)}</div>
+      <div class="decor" style="left:${960 - 260 * u}px;top:${oy + 823 * u * 0.04}px;z-index:9">${sparkle(48 * u, '#00E784', 10)}</div>
       <div class="decor" style="left:${960 + 300 * u}px;top:${oy + 823 * u * 0.03}px;z-index:9">${sparkle(28 * u, '#fff', -10)}</div>
       <div class="decor" style="left:120px;top:${LH * 0.4}px">${sparkle(30 * u, '#fff', 20)}</div>
-      <div class="decor" style="left:1760px;top:${LH * 0.42}px">${sparkle(36 * u, '#BEFF00', -20)}</div>
+      <div class="decor" style="left:1760px;top:${LH * 0.42}px">${sparkle(36 * u, '#00E784', -20)}</div>
     </div>`;
 } else {
   root.style.cssText += `width:1024px;height:500px;transform:scale(${W / 1024})`;
@@ -85,17 +85,17 @@ if (g === 'icon') {
           <div class="island"></div>${S[screen](ctx)}</div></div></div>`;
   root.innerHTML = `
     <div class="fg">
-      <div class="blob" style="left:620px;top:-120px;width:520px;height:520px;background:#BEFF00;opacity:.08"></div>
-      <div class="dots" style="left:470px;top:30px;width:180px;height:140px;color:#BEFF00;opacity:.22"></div>
+      <div class="blob" style="left:620px;top:-120px;width:520px;height:520px;background:#00E784;opacity:.08"></div>
+      <div class="dots" style="left:470px;top:30px;width:180px;height:140px;color:#00E784;opacity:.22"></div>
       ${phone('orders', 820, 60, 9, 0.56)}
       ${phone('home', 590, 46, -6, 0.6)}
-      <div class="decor" style="left:560px;top:60px;z-index:6">${sparkle(40, '#BEFF00', 10)}</div>
+      <div class="decor" style="left:560px;top:60px;z-index:6">${sparkle(40, '#00E784', 10)}</div>
       <div class="decor" style="left:968px;top:34px;z-index:6">${sparkle(26, '#fff', -10)}</div>
-      <div class="decor" style="left:420px;top:380px">${sparkle(22, '#BEFF00', 20)}</div>
+      <div class="decor" style="left:420px;top:380px">${sparkle(22, '#00E784', 20)}</div>
       <div class="txt">
-        <div class="logo"><img src="assets/hand.png" alt=""></div>
+        <div class="logo"><img src="assets/app-icon-source.png" alt=""></div>
         <h1>Diyaar Store</h1>
-        <h2>Orders. Menu. Sales. 🫰</h2>
+        <h2>Orders. Products. Sales.</h2>
         <div class="chips"><span class="chip2">🛎️ Live orders</span><span class="chip2">💸 Daily sales</span></div>
       </div>
     </div>`;

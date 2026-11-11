@@ -1,4 +1,4 @@
-# 🫰 Diyaar Store: Store Kit
+# Diyaar Store: Store Kit
 
 Everything you need to publish **Diyaar Store** on the **App Store** and **Google Play**: screenshots, icons, the feature graphic, listing text, the exact sizes each store wants, and a checklist so nothing bounces in review.
 
@@ -29,7 +29,7 @@ store/
 │       └── feature-graphic_1024x500.png         ✅ required
 └── source/                  ← HTML templates that generate all of the above
     ├── shot.html  graphic.html  screens.js  styles.css
-    ├── fonts/ (Fredoka, Nunito, both OFL)  assets/ (logo hand, app icon)
+    ├── fonts/ (Fredoka, Nunito, both OFL)  assets/ (Diyaar mark, app icon)
     └── render.sh
 ```
 
@@ -154,7 +154,7 @@ Where to edit:
 |---|---|
 | Headlines, sub-lines, stickers, background theme | `source/shot.html` → `SHOTS` |
 | What's on the phone screens (numbers, names, UI) | `source/screens.js` → `S.home`, `S.orders`, `S.detail`, `S.products`, `S.earnings`, `S.reviews`, `S.hours` |
-| Colours, fonts, sticker style | `source/styles.css` (`--olive #2B330F`, `--lime #BEFF00`, `--teal #219186`) |
+| Colours, fonts, sticker style | `source/styles.css` (`--deep #00231F`, `--green #00E784`, `--mint #EAFFED`) |
 | Feature graphic / icons / headers | `source/graphic.html` |
 | Add a new size | `TARGETS` list in `source/render.sh` |
 

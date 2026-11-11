@@ -211,14 +211,14 @@ function MenuSheet({ opened, onClose }: { opened: boolean; onClose: () => void }
           inset
           dividers
           className="!mt-4 !mb-2"
-          // light lime card so the store stands out from the menu rows
-          colors={{ strongBgIos: "bg-[#BEFF00]/20 dark:bg-[#BEFF00]/15", strongBgMaterial: "bg-[#BEFF00]/20 dark:bg-[#BEFF00]/15" }}
+          // mint card so the store stands out from the menu rows
+          colors={{ strongBgIos: "bg-[#EAFFED] dark:bg-[#00E784]/15", strongBgMaterial: "bg-[#EAFFED] dark:bg-[#00E784]/15" }}
         >
           <ListItem
             link
             chevron
             onClick={() => go("/store")}
-            media={<span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2B330F] text-[17px] font-semibold text-[#BEFF00]">{store ? initials(store.store_name) : ""}</span>}
+            media={<span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#00231F] text-[17px] font-semibold text-[#00E784]">{store ? initials(store.store_name) : ""}</span>}
             title={<span className="font-semibold">{store?.store_name ?? "My store"}</span>}
             text={`${user?.full_name ?? store?.owner_name ?? ""} · ${user?.role ?? "Owner"}`}
           />
@@ -308,13 +308,13 @@ function NewOrdersBar({ count, visible }: { count: number; visible: boolean }) {
             navigate("/orders?status=confirming");
           }}
           className={cn(
-            "hide-on-kb fixed inset-x-3 z-30 flex items-center gap-3 rounded-xl bg-[#2B330F] px-4 py-3 text-left text-white shadow-[0_10px_30px_-10px_rgba(43,51,15,0.7)] active:scale-[0.98]",
+            "hide-on-kb fixed inset-x-3 z-30 flex items-center gap-3 rounded-xl bg-[#00231F] px-4 py-3 text-left text-white shadow-[0_10px_30px_-10px_rgba(0,35,31,0.7)] active:scale-[0.98]",
             mobileTheme === "ios" ? "bottom-[calc(env(safe-area-inset-bottom)+62px)]" : "bottom-[calc(env(safe-area-inset-bottom)+90px)]",
           )}
         >
           <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
             <ReceiptText className="h-5 w-5" />
-            <span className="absolute -right-1 -top-1 flex h-5 min-w-5 animate-bounce items-center justify-center rounded-full bg-[#BEFF00] px-1 text-[11px] font-extrabold text-[#2B330F]">{count}</span>
+            <span className="absolute -right-1 -top-1 flex h-5 min-w-5 animate-bounce items-center justify-center rounded-full bg-[#00E784] px-1 text-[11px] font-extrabold text-[#00231F]">{count}</span>
           </span>
           <span className="flex-1 leading-tight">
             <span className="block text-[15px] font-extrabold">

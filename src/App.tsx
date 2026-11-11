@@ -10,7 +10,7 @@ import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import LoginPage from "@/pages/Login";
 import OnboardingPage from "@/pages/Onboarding";
 import { markOnboardingSeen, onboardingSeen } from "@/lib/prefs";
-import { LAUNCH_DARK, LaunchScreen } from "@/components/shared/LaunchScreen";
+import { LaunchScreen } from "@/components/shared/LaunchScreen";
 import { NoInternet } from "@/components/shared/NoInternet";
 import { hideSplash, setStatusBarTheme } from "@/lib/native";
 import { useOnline } from "@/lib/network";
@@ -88,10 +88,10 @@ function Launch() {
     return () => clearTimeout(t);
   }, []);
   const show = !played || status === "loading";
-  // Dark status-bar icons on the lime (white on the olive in dark mode). The first screen after it
-  // (Home, Login or Onboarding) wants white ones, and each screen restores the app's own colour when it's left.
+  // White status-bar icons: the launch screen and the first screen after it (Home, Login or Onboarding) are all dark.
+  // Each screen restores the app's own colour when it's left.
   useEffect(() => {
-    setStatusBarTheme(show ? LAUNCH_DARK : true);
+    setStatusBarTheme(true);
   }, [show]);
   return <AnimatePresence>{show && <LaunchScreen key="launch" />}</AnimatePresence>;
 }

@@ -36,15 +36,15 @@ const SHOTS = {
     p: 'Orders, menu, sales & earnings in one app',
     stickers: [
       { l: -12, t: -3, r: -7, cls: 'big', html: '<span class="em">🟢</span> Open in one tap' },
-      { rt: -10, t: 61, r: 6, cls: 'lime', html: '<span class="em">📈</span> +18% today' },
+      { rt: -10, t: 61, r: 6, cls: 'green', html: '<span class="em">📈</span> +18% today' },
     ],
   },
   2: {
     slug: 'accept-orders', theme: 'dark', screen: 'orders',
-    h1: 'Accept orders<br><mark>in a snap</mark> 🫰',
+    h1: 'Accept orders<br><mark>in a snap</mark> ⚡',
     p: 'New orders ring in. Tap Accept and get cooking',
     stickers: [
-      { l: -11, t: -3, r: -8, cls: 'lime big', html: '<span class="em">🛎️</span> Ding ding!' },
+      { l: -11, t: -3, r: -8, cls: 'green big', html: '<span class="em">🛎️</span> Ding ding!' },
       { rt: -10, t: 46, r: 7, cls: '', html: '<span class="em">💚</span> +$18.50' },
       { l: -10, t: 67.5, r: -5, cls: '', html: '<span class="em">⏱️</span> Live timers' },
     ],
@@ -55,7 +55,7 @@ const SHOTS = {
     p: 'Track every order from cooking to delivered',
     stickers: [
       { rt: -11, t: 10, r: 7, cls: 'big', html: '<span class="em">🧑‍🍳</span> Cooking' },
-      { l: -11, t: 59.5, r: -7, cls: 'lime', html: '<span class="em">📞</span> Call the customer' },
+      { l: -11, t: 59.5, r: -7, cls: 'green', html: '<span class="em">📞</span> Call the customer' },
       { rt: -8, t: 85, r: 5, cls: 'dark', html: '<span class="em">✅</span> <b>Ready in one tap</b>' },
     ],
   },
@@ -65,12 +65,12 @@ const SHOTS = {
     p: 'Add items, edit prices & mark sold out',
     stickers: [
       { l: -11, t: 30, r: -7, cls: 'big', html: '<span class="em">📸</span> Add a photo' },
-      { rt: -10, t: 46, r: 7, cls: 'lime', html: '<span class="em">🏷️</span> 15% off' },
+      { rt: -10, t: 46, r: 7, cls: 'green', html: '<span class="em">🏷️</span> 15% off' },
       { l: -9, t: 66, r: -5, cls: 'dark', html: '<span class="em">✅</span> <b>In stock</b>' },
     ],
   },
   5: {
-    slug: 'earnings', theme: 'lime', screen: 'earnings',
+    slug: 'earnings', theme: 'green', screen: 'earnings',
     h1: 'Watch your<br>sales <mark>grow</mark> 💸',
     p: 'See your payout and every dollar you earn',
     stickers: [
@@ -83,7 +83,7 @@ const SHOTS = {
     h1: 'See what customers<br><mark>love</mark> ⭐',
     p: 'Every rating and review in one place',
     stickers: [
-      { l: -11, t: -3, r: -7, cls: 'lime big', html: '<span class="em">⭐</span> 4.8 rating' },
+      { l: -11, t: -3, r: -7, cls: 'green big', html: '<span class="em">⭐</span> 4.8 rating' },
       { rt: -9, t: 52.5, r: 6, cls: '', html: '<span class="em">😍</span> Best in Hodan!' },
       { l: -10, t: 84, r: -5, cls: 'dark', html: '<span class="em">💬</span> <b>1,248 reviews</b>' },
     ],
@@ -94,19 +94,19 @@ const SHOTS = {
     p: 'Set opening hours, add your team & close any time',
     stickers: [
       { l: -11, t: -3, r: -7, cls: 'big', html: '<span class="em">⏰</span> Open 7am to 11pm' },
-      { rt: -10, t: 90, r: 7, cls: 'lime', html: '<span class="em">👥</span> Team of 4' },
+      { rt: -10, t: 90, r: 7, cls: 'green', html: '<span class="em">👥</span> Team of 4' },
       { l: -10, t: 84, r: -5, cls: 'dark', html: '<span class="em">⚡</span> <b>Auto-accept</b>' },
     ],
   },
 };
 
 const DECOR = {
-  light: [['blob', 8, 32, 520, '#E2FF8A', .55], ['blob', 78, 52, 460, '#FFFFFF', .7], ['blob', -6, 78, 380, '#D6FF66', .45]],
-  mint:  [['blob', 76, 30, 520, '#B9EEE4', .6], ['blob', -8, 64, 480, '#E6FF9E', .55], ['blob', 70, 86, 380, '#FFFFFF', .7]],
-  peach: [['blob', -6, 36, 520, '#FFD3BA', .55], ['blob', 74, 66, 460, '#E6FF9E', .55], ['blob', 10, 92, 360, '#FFFFFF', .6]],
-  lime:  [['blob', 78, 30, 540, '#D8FF5C', .9], ['blob', -10, 70, 460, '#A2E000', .6], ['blob', 60, 92, 380, '#DFFF7A', .8]],
-  dark:  [['blob', 80, 32, 560, '#BEFF00', .08], ['blob', -12, 66, 500, '#BEFF00', .06], ['blob', 50, 96, 400, '#ffffff', .04]],
-  teal:  [['blob', 80, 32, 560, '#BEFF00', .12], ['blob', -12, 66, 500, '#ffffff', .08], ['blob', 50, 96, 400, '#0f4f48', .5]],
+  light: [['blob', 8, 32, 520, '#C6F9DC', .55], ['blob', 78, 52, 460, '#FFFFFF', .7], ['blob', -6, 78, 380, '#A8F5CB', .45]],
+  mint:  [['blob', 76, 30, 520, '#B9EEE4', .6], ['blob', -8, 64, 480, '#D5FBE3', .55], ['blob', 70, 86, 380, '#FFFFFF', .7]],
+  peach: [['blob', -6, 36, 520, '#FFD3BA', .55], ['blob', 74, 66, 460, '#D5FBE3', .55], ['blob', 10, 92, 360, '#FFFFFF', .6]],
+  green: [['blob', 78, 30, 540, '#5CF5AC', .9], ['blob', -10, 70, 460, '#00B86A', .6], ['blob', 60, 92, 380, '#7FF7BE', .8]],
+  dark:  [['blob', 80, 32, 560, '#00E784', .08], ['blob', -12, 66, 500, '#00E784', .06], ['blob', 50, 96, 400, '#ffffff', .04]],
+  teal:  [['blob', 80, 32, 560, '#00E784', .12], ['blob', -12, 66, 500, '#ffffff', .08], ['blob', 50, 96, 400, '#00231F', .5]],
 };
 
 const P = new URLSearchParams(location.search);
@@ -121,7 +121,7 @@ stage.style.height = SH + 'px';
 stage.style.transform = `scale(${W / SW})`;
 
 const dark = shot.theme === 'dark' || shot.theme === 'teal';
-const sparkleColor = dark ? '#BEFF00' : '#2B330F';
+const sparkleColor = dark ? '#00E784' : '#00231F';
 
 // Background decor
 let html = '';
@@ -134,13 +134,13 @@ html += `<div class="dots" style="right:-40px;top:${SH * 0.70}px;width:240px;hei
 // Caption
 const capTop = Math.round(SH * (kind.tablet ? 0.045 : 0.05));
 html += `<div class="cap" id="cap" style="top:${capTop}px">
-  <div class="brandpill"><span class="ico"><img src="assets/hand.png" alt=""></span>Diyaar Store</div>
+  <div class="brandpill"><span class="ico"><img src="assets/diyaar-mark.svg" alt=""></span>Diyaar Store</div>
   <h1>${shot.h1}</h1><p>${shot.p}</p></div>`;
 
 // Floating sparkles around the caption
 html += `<div class="decor" style="left:70px;top:${capTop + 20}px">${sparkle(64, sparkleColor, 10)}</div>
-  <div class="decor" style="left:150px;top:${capTop + 110}px">${sparkle(30, dark ? '#fff' : '#BEFF00', -10)}</div>
-  <div class="decor" style="right:84px;top:${capTop + 40}px">${heart(54, dark ? '#BEFF00' : '#FF8FB1', 14)}</div>
+  <div class="decor" style="left:150px;top:${capTop + 110}px">${sparkle(30, dark ? '#fff' : '#00E784', -10)}</div>
+  <div class="decor" style="right:84px;top:${capTop + 40}px">${heart(54, dark ? '#00E784' : '#FF8FB1', 14)}</div>
   <div class="decor" style="right:170px;top:${capTop - 6}px">${sparkle(34, sparkleColor, 20)}</div>`;
 
 stage.innerHTML = html;
@@ -167,8 +167,8 @@ const stickerHtml = shot.stickers.map((s) => {
 }).join('');
 const spark = `
   <div class="sparkle" style="left:-7%;top:6%">${sparkle(fs * 1.6, sparkleColor, 0)}</div>
-  <div class="sparkle" style="right:-6%;top:58%">${sparkle(fs * 1.2, dark ? '#fff' : '#BEFF00', 18)}</div>
-  <div class="sparkle" style="left:-5%;top:88%">${heart(fs * 1.3, dark ? '#BEFF00' : '#FF8FB1', -12)}</div>`;
+  <div class="sparkle" style="right:-6%;top:58%">${sparkle(fs * 1.2, dark ? '#fff' : '#00E784', 18)}</div>
+  <div class="sparkle" style="left:-5%;top:88%">${heart(fs * 1.3, dark ? '#00E784' : '#FF8FB1', -12)}</div>`;
 
 const device = document.createElement('div');
 device.className = 'device';

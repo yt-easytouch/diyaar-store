@@ -3,8 +3,8 @@
    They mirror src/mobile/screens/* (Konsta UI, iOS theme on every device) with demo data.
    Loaded as a classic script so it works over file:// in headless Chrome. */
 (function () {
-  const OLIVE = '#2B330F';
-  const LIME = '#BEFF00';
+  const DEEP = '#00231F';
+  const GREEN = '#00E784';
   const INK = '#1C1C1E';
 
   // Lucide icon paths (24×24 grid), same icon set as the app (lucide-react)
@@ -78,7 +78,7 @@
   function tabbar(ctx, active, badge = 3) {
     const items = [['grid', 'Home'], ['menu', 'Menu'], ['receipt', 'Orders'], ['pkg', 'Products'], ['wallet', 'Earnings']];
     return `<div class="tb" style="padding-bottom:${ctx.bottom + 4}px">${items
-      .map(([ic, l]) => `<div class="it ${l === active ? 'on' : ''}">${I(ic, 26, l === active ? OLIVE : '#8E8E93', l === active ? 2.2 : 1.9)}${l === 'Orders' && badge ? `<span class="badge">${badge}</span>` : ''}${l}</div>`)
+      .map(([ic, l]) => `<div class="it ${l === active ? 'on' : ''}">${I(ic, 26, l === active ? DEEP : '#8E8E93', l === active ? 2.2 : 1.9)}${l === 'Orders' && badge ? `<span class="badge">${badge}</span>` : ''}${l}</div>`)
       .join('')}</div>`;
   }
 
@@ -90,9 +90,9 @@
     return `<div class="nb">
       ${statusBar(ctx)}
       <div class="row1">
-        <div style="min-width:80px">${o.back ? `<span class="back">${I('left', 26, OLIVE, 2.4)}${o.back}</span>` : ''}</div>
+        <div style="min-width:80px">${o.back ? `<span class="back">${I('left', 26, DEEP, 2.4)}${o.back}</span>` : ''}</div>
         ${o.center ? `<div class="ctitle">${o.center}${o.centerSub ? `<small>${o.centerSub}</small>` : ''}</div>` : ''}
-        <div style="min-width:80px;display:flex;justify-content:flex-end;color:${OLIVE}">${o.right || ''}</div>
+        <div style="min-width:80px;display:flex;justify-content:flex-end;color:${DEEP}">${o.right || ''}</div>
       </div>
       ${o.large ? `<div class="large">${o.large}</div>` : ''}
       ${o.sub ? `<div class="sub">${o.sub}</div>` : ''}
@@ -100,7 +100,7 @@
     </div>`;
   }
 
-  const searchField = (ph) => `<div style="margin:2px 16px 8px;height:42px;border-radius:12px;background:rgba(190,255,0,.16);box-shadow:inset 0 0 0 1px rgba(43,51,15,.12);display:flex;align-items:center;gap:8px;padding:0 12px;color:rgba(0,0,0,.45);font-size:16px">${I('search', 19, 'rgba(43,51,15,.7)', 2.2)}${ph}</div>`;
+  const searchField = (ph) => `<div style="margin:2px 16px 8px;height:42px;border-radius:12px;background:#EAFFED;box-shadow:inset 0 0 0 1px rgba(0,35,31,.12);display:flex;align-items:center;gap:8px;padding:0 12px;color:rgba(0,0,0,.45);font-size:16px">${I('search', 19, 'rgba(0,35,31,.7)', 2.2)}${ph}</div>`;
 
   /* ---------- Screens ---------- */
   const S = {};
@@ -125,8 +125,8 @@
         <div class="row" style="gap:5px;margin-top:6px;font-size:11px" class="muted"><span class="row b" style="gap:2px;background:#e8f7ee;color:#1a9d4b;border-radius:6px;padding:2px 6px">${I('up', 12, '#1a9d4b', 2.6)}${d}</span><span class="muted">vs yesterday</span></div></div>`;
     return `
     <div class="app ${ctx.os}">
-      <div style="position:relative;background:linear-gradient(135deg,#3fd0bd,#219186 50%,#0f4f48);color:#fff;padding:0 16px 56px;overflow:hidden;flex-shrink:0">
-        <span style="position:absolute;right:-64px;top:-80px;width:224px;height:224px;border-radius:50%;background:rgba(190,255,0,.2);filter:blur(40px)"></span>
+      <div style="position:relative;background:linear-gradient(135deg,#00684f,#003a31 50%,#00231F);color:#fff;padding:0 16px 56px;overflow:hidden;flex-shrink:0">
+        <span style="position:absolute;right:-64px;top:-80px;width:224px;height:224px;border-radius:50%;background:rgba(0,231,132,.2);filter:blur(40px)"></span>
         <span style="position:absolute;inset:auto 0 0 0;height:112px;background:linear-gradient(180deg,transparent,rgba(247,249,249,.7) 50%,#F7F9F9)"></span>
         <div style="margin:0 -16px">${statusBar(ctx, true)}</div>
         <div class="rel row" style="align-items:flex-start;gap:12px;margin-top:6px">
@@ -135,24 +135,24 @@
             <div style="font-size:22px;font-weight:800;letter-spacing:-.4px;margin-top:2px">Open for orders</div>
             <div class="row" style="gap:3px;font-size:13px;font-weight:500;opacity:.88;margin-top:2px">Kulan Café · Hodan ${I('down', 16, '#fff', 2.2)}</div>
           </div>
-          <img src="assets/hand-lime.png" style="width:40px;height:40px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.3))">
+          <img src="assets/diyaar-mark.svg" style="width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.3))">
         </div>
         <div class="rel row" style="gap:8px;margin-top:12px;font-size:13px;font-weight:700">
           <span class="row" style="gap:6px;background:rgba(255,255,255,.15);border-radius:8px;padding:6px 10px">${I('clock', 16, '#fff')} 15 min prep</span>
-          <span class="row" style="gap:6px;background:rgba(255,255,255,.15);border-radius:8px;padding:6px 10px">${I('star', 16, LIME, 2, LIME)} 4.8</span>
-          <span class="row" style="gap:8px;background:rgba(255,255,255,.15);border-radius:8px;padding:6px 12px;margin-left:auto;font-weight:800"><span style="width:8px;height:8px;border-radius:50%;background:${LIME}"></span>Open</span>
+          <span class="row" style="gap:6px;background:rgba(255,255,255,.15);border-radius:8px;padding:6px 10px">${I('star', 16, GREEN, 2, GREEN)} 4.8</span>
+          <span class="row" style="gap:8px;background:rgba(255,255,255,.15);border-radius:8px;padding:6px 12px;margin-left:auto;font-weight:800"><span style="width:8px;height:8px;border-radius:50%;background:${GREEN}"></span>Open</span>
         </div>
-        <div class="rel row" style="margin-top:12px;height:44px;border-radius:12px;background:#fff;padding:0 14px;gap:10px;color:rgba(0,0,0,.45);font-size:15px;box-shadow:0 6px 20px -8px rgba(15,79,72,.35)">${I('search', 20, 'rgba(0,0,0,.6)')} Search orders, customers…</div>
+        <div class="rel row" style="margin-top:12px;height:44px;border-radius:12px;background:#fff;padding:0 14px;gap:10px;color:rgba(0,0,0,.45);font-size:15px;box-shadow:0 6px 20px -8px rgba(0,35,31,.35)">${I('search', 20, 'rgba(0,0,0,.6)')} Search orders, customers…</div>
       </div>
       <div class="rel" style="margin-top:-32px">
-        <div style="margin:0 16px;height:${ctx.tablet ? 150 : 118}px;border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(120deg,${OLIVE},#4a5a18);color:#fff;padding:16px 18px;box-shadow:0 8px 24px -12px rgba(43,51,15,.6)">
-          <span style="position:absolute;right:-30px;top:-40px;width:180px;height:180px;border-radius:50%;background:${LIME};opacity:.16"></span>
+        <div style="margin:0 16px;height:${ctx.tablet ? 150 : 118}px;border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(120deg,${DEEP},#00684f);color:#fff;padding:16px 18px;box-shadow:0 8px 24px -12px rgba(0,35,31,.6)">
+          <span style="position:absolute;right:-30px;top:-40px;width:180px;height:180px;border-radius:50%;background:${GREEN};opacity:.16"></span>
           <span style="position:absolute;right:18px;bottom:6px;font-size:${ctx.tablet ? 78 : 62}px">🛵</span>
-          <span class="chip" style="background:${LIME};color:${OLIVE};padding:3px 8px;font-size:11px">YOUR OFFER</span>
+          <span class="chip" style="background:${GREEN};color:${DEEP};padding:3px 8px;font-size:11px">YOUR OFFER</span>
           <div style="font-size:20px;font-weight:800;letter-spacing:-.3px;margin-top:8px">Free delivery weekend</div>
           <div style="font-size:13px;opacity:.8;margin-top:2px">On Kulan Café orders over $10</div>
         </div>
-        <div class="row" style="justify-content:center;gap:5px;margin-top:8px"><span style="width:16px;height:6px;border-radius:3px;background:${OLIVE}"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(0,0,0,.15)"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(0,0,0,.15)"></span></div>
+        <div class="row" style="justify-content:center;gap:5px;margin-top:8px"><span style="width:16px;height:6px;border-radius:3px;background:${DEEP}"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(0,0,0,.15)"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(0,0,0,.15)"></span></div>
 
         <div class="secttitle" style="margin-top:16px"><b>Live orders</b><span>See all</span></div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 16px">
@@ -167,14 +167,14 @@
           <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px" class="muted">Last 7 days</div>
           <div class="tab xb" style="font-size:22px;letter-spacing:-.4px">$2,812.00</div>
           <svg viewBox="0 0 ${W} ${H + 18}" width="100%" height="${ctx.tablet ? 110 : 84}" preserveAspectRatio="none" style="display:block;margin-top:6px">
-            <defs><linearGradient id="rev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${LIME}" stop-opacity=".6"/><stop offset="1" stop-color="${LIME}" stop-opacity="0"/></linearGradient></defs>
-            <path d="${area}" fill="url(#rev)"/><path d="${line}" fill="none" stroke="${OLIVE}" stroke-width="2.5" stroke-linejoin="round"/>
+            <defs><linearGradient id="rev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${GREEN}" stop-opacity=".6"/><stop offset="1" stop-color="${GREEN}" stop-opacity="0"/></linearGradient></defs>
+            <path d="${area}" fill="url(#rev)"/><path d="${line}" fill="none" stroke="${DEEP}" stroke-width="2.5" stroke-linejoin="round"/>
             ${days.map((d, i) => `<text x="${pts[i][0]}" y="${H + 15}" font-size="10" fill="#9a9a9f" text-anchor="middle" font-family="-apple-system,system-ui">${d}</text>`).join('')}
           </svg>
         </div>
       </div>
-      <div class="row" style="position:absolute;left:12px;right:12px;bottom:${ctx.bottom + 66}px;z-index:31;gap:12px;background:${OLIVE};color:#fff;border-radius:12px;padding:11px 16px;box-shadow:0 10px 30px -10px rgba(43,51,15,.7)">
-        <span style="position:relative;width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.15);display:grid;place-items:center">${I('receipt', 20, '#fff')}<span style="position:absolute;right:-4px;top:-4px;min-width:20px;height:20px;border-radius:10px;background:${LIME};color:${OLIVE};font-size:11px;font-weight:800;display:grid;place-items:center">3</span></span>
+      <div class="row" style="position:absolute;left:12px;right:12px;bottom:${ctx.bottom + 66}px;z-index:31;gap:12px;background:${DEEP};color:#fff;border-radius:12px;padding:11px 16px;box-shadow:0 10px 30px -10px rgba(0,35,31,.7)">
+        <span style="position:relative;width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.15);display:grid;place-items:center">${I('receipt', 20, '#fff')}<span style="position:absolute;right:-4px;top:-4px;min-width:20px;height:20px;border-radius:10px;background:${GREEN};color:${DEEP};font-size:11px;font-weight:800;display:grid;place-items:center">3</span></span>
         <span style="flex:1;line-height:1.2"><b style="display:block;font-size:15px;font-weight:800">3 new orders</b><span style="font-size:12px;opacity:.8;font-weight:500">Customers are waiting</span></span>
         <span class="xb" style="font-size:15px">Accept →</span>
       </div>
@@ -203,11 +203,11 @@
           <div style="font-size:14px;line-height:1.35;color:rgba(0,0,0,.65);margin-top:4px">${items.map(([q, n]) => `<b style="color:#000">${q}</b> ${n}`).join('<span style="color:rgba(0,0,0,.25)"> · </span>')}</div>
           ${note ? `<div class="row" style="align-items:flex-start;gap:6px;margin-top:8px;border-radius:8px;background:rgba(255,149,0,.1);padding:6px 10px;font-size:13px;font-weight:500;color:#b86400">${I('note', 14, '#b86400')}${note}</div>` : ''}
         </div>
-        <div style="padding:0 16px 16px"><div class="btnl" style="height:44px;border-radius:12px;font-size:15px">${I('check', 18, OLIVE, 3)} Accept</div></div>
+        <div style="padding:0 16px 16px"><div class="btnl" style="height:44px;border-radius:12px;font-size:15px">${I('check', 18, DEEP, 3)} Accept</div></div>
       </div>`;
     return `
     <div class="app ${ctx.os}">
-      ${navbar(ctx, { right: I('history', 24, OLIVE), large: 'Orders', extra: tabs })}
+      ${navbar(ctx, { right: I('history', 24, DEEP), large: 'Orders', extra: tabs })}
       <div style="padding-top:12px">
         ${ticket('1042', 'Delivery', 'now', false, 'Hodan Ali', '$18.50', [['2', 'Chicken Shawarma'], ['3', 'Sambusa'], ['1', 'Mango Juice']], 'Extra hot sauce please 🌶️')}
         ${ticket('1041', 'Pickup', '2 min', false, 'Abdi Warsame', '$9.00', [['1', 'Bariis Iskukaris'], ['1', 'Fresh Lemon Mint']])}
@@ -220,7 +220,7 @@
   // Order detail: status, items, customer, driver, action bar
   S.detail = (ctx) => {
     const li = (media, title, after, opt = {}) => `<div class="li">${media}<div class="lbody"><span style="font-size:16px;${opt.ts || ''}">${title}${opt.foot ? `<span style="display:block;font-size:13px;color:#c76e00;margin-top:1px">${opt.foot}</span>` : ''}</span>${after ? `<span class="tab" style="font-size:16px;color:${opt.ac || 'rgba(0,0,0,.45)'};white-space:nowrap">${after}</span>` : ''}</div></div>`;
-    const qty = (n) => `<span class="tab b" style="min-width:30px;height:28px;border-radius:8px;background:rgba(43,51,15,.1);color:${OLIVE};font-size:13px;display:grid;place-items:center;padding:0 6px">${n}×</span>`;
+    const qty = (n) => `<span class="tab b" style="min-width:30px;height:28px;border-radius:8px;background:rgba(0,35,31,.1);color:${DEEP};font-size:13px;display:grid;place-items:center;padding:0 6px">${n}×</span>`;
     const tile = (ic, bg, fg = '#fff') => `<span class="tile" style="background:${bg}">${I(ic, 17, fg, 2.2)}</span>`;
     return `
     <div class="app ${ctx.os}">
@@ -241,12 +241,12 @@
       <div class="blocktitle">Customer</div>
       <div class="list">
         ${li(tile('user', '#007aff'), 'Faadumo Yusuf')}
-        ${li(tile('phone', '#34c759'), '+252 61 555 0142', 'Call', { ac: OLIVE })}
+        ${li(tile('phone', '#34c759'), '+252 61 555 0142', 'Call', { ac: DEEP })}
         ${li(tile('pin', '#ff3b30'), 'Taleex St, near the blue gate')}
         ${li(tile('card', '#ff9500'), 'Mobile money (EVC)', 'Paid', { ac: '#34c759' })}
       </div>
       <div class="blocktitle">Driver</div>
-      <div class="list">${li(tile('bike', LIME, OLIVE), 'Mohamed Ali', 'Call', { ac: OLIVE })}</div>
+      <div class="list">${li(tile('bike', GREEN, DEEP), 'Mohamed Ali', 'Call', { ac: DEEP })}</div>
       <div style="position:absolute;left:0;right:0;bottom:0;z-index:30;background:rgba(250,250,250,.96);border-top:.5px solid rgba(0,0,0,.14);padding:12px 16px ${ctx.bottom + 12}px">
         <div class="btnl" style="background:#34c759;color:#fff">Mark ready</div>
       </div>
@@ -258,7 +258,7 @@
   S.products = (ctx) => {
     const cats = [['All', 'All', 48], ['Breakfast', 'Breakfast'], ['Grill', 'Grill'], ['Rice', 'Rice'], ['Wraps', 'Wraps'], ['Drinks', 'Drinks']];
     const rail = `<div class="row" style="gap:8px;padding:10px 12px;border-bottom:1px solid rgba(0,0,0,.06);background:rgba(247,249,249,.95);overflow:hidden">
-      ${cats.map(([k, l], i) => `<div class="row" style="flex-shrink:0;height:40px;border-radius:20px;gap:8px;padding:0 14px 0 4px;font-size:14px;${i === 0 ? `background:${LIME};color:${OLIVE};font-weight:700` : 'background:#fff;color:rgba(0,0,0,.7);font-weight:600;box-shadow:0 0 0 1px rgba(0,0,0,.06)'}">${tileArt(k, 32, 32, 16, 16)}${l}</div>`).join('')}</div>`;
+      ${cats.map(([k, l], i) => `<div class="row" style="flex-shrink:0;height:40px;border-radius:20px;gap:8px;padding:0 14px 0 4px;font-size:14px;${i === 0 ? `background:${GREEN};color:${DEEP};font-weight:700` : 'background:#fff;color:rgba(0,0,0,.7);font-weight:600;box-shadow:0 0 0 1px rgba(0,0,0,.06)'}">${tileArt(k, 32, 32, 16, 16)}${l}</div>`).join('')}</div>`;
     const items = [
       ['Wraps', 'Chicken Shawarma', '$4.50', null, true, null, '🌯'],
       ['Grill', 'Beef Suqaar', '$6.80', '$8.00', true, 15, '🥩'],
@@ -279,7 +279,7 @@
         <div class="b" style="font-size:13px;line-height:1.25;height:34px;${on ? '' : 'color:rgba(0,0,0,.4)'}">${name}</div>
         <div class="row between" style="align-items:flex-end;margin-top:6px">
           <div style="line-height:1.15"><div class="tab xb" style="font-size:14px">${price}</div>${was ? `<div class="tab muted" style="font-size:11px;text-decoration:line-through">${was}</div>` : ''}</div>
-          <span style="height:32px;border-radius:8px;padding:0 8px;font-size:11px;font-weight:800;display:grid;place-items:center;${on ? `border:1px solid ${OLIVE};background:rgba(190,255,0,.18);color:${OLIVE}` : 'border:1px solid rgba(0,0,0,.15);background:rgba(0,0,0,.04);color:rgba(0,0,0,.5)'}">${on ? 'In stock' : 'Sold out'}</span>
+          <span style="height:32px;border-radius:8px;padding:0 8px;font-size:11px;font-weight:800;display:grid;place-items:center;${on ? `border:1px solid ${DEEP};background:rgba(0,231,132,.18);color:${DEEP}` : 'border:1px solid rgba(0,0,0,.15);background:rgba(0,0,0,.04);color:rgba(0,0,0,.5)'}">${on ? 'In stock' : 'Sold out'}</span>
         </div>
       </div>`;
     return `
@@ -290,7 +290,7 @@
         <div class="xb" style="font-size:13px;padding:0 4px 8px">All items <span class="muted" style="font-weight:600">· 48</span></div>
         <div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:8px">${items.slice(0, ctx.tablet ? 9 : 6).map(card).join('')}</div>
       </div>
-      <div class="row" style="position:absolute;right:16px;bottom:${ctx.bottom + 76}px;z-index:31;height:44px;border-radius:12px;background:${LIME};color:${OLIVE};padding:0 16px 0 12px;gap:6px;font-size:15px;font-weight:700;box-shadow:0 8px 20px -8px rgba(43,51,15,.55)">${I('plus', 20, OLIVE, 2.6)}Add item</div>
+      <div class="row" style="position:absolute;right:16px;bottom:${ctx.bottom + 76}px;z-index:31;height:44px;border-radius:12px;background:${GREEN};color:${DEEP};padding:0 16px 0 12px;gap:6px;font-size:15px;font-weight:700;box-shadow:0 8px 20px -8px rgba(0,35,31,.55)">${I('plus', 20, DEEP, 2.6)}Add item</div>
       ${tabbar(ctx, 'Products')}${homebar(ctx)}
     </div>`;
   };
@@ -302,18 +302,18 @@
     return `
     <div class="app ${ctx.os}">
       ${navbar(ctx, { large: 'Earnings' })}
-      <div style="position:relative;margin:8px 16px 0;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#3d4a14,${OLIVE} 50%,#161a07);color:#fff;padding:20px;box-shadow:0 10px 24px rgba(43,51,15,.25)">
+      <div style="position:relative;margin:8px 16px 0;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#00684f,${DEEP} 50%,#001412);color:#fff;padding:20px;box-shadow:0 10px 24px rgba(0,35,31,.25)">
         <span style="position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.1)"></span>
         <span style="position:absolute;right:40px;bottom:-64px;width:128px;height:128px;border-radius:50%;background:rgba(255,255,255,.05)"></span>
         <div class="row" style="gap:8px;font-size:15px;opacity:.9">${I('wallet', 16, '#fff')} Your earnings to be paid</div>
-        <div class="tab" style="font-size:40px;font-weight:700;letter-spacing:-.8px;margin-top:4px;color:${LIME}">$1,284.60</div>
+        <div class="tab" style="font-size:40px;font-weight:700;letter-spacing:-.8px;margin-top:4px;color:${GREEN}">$1,284.60</div>
         <div style="font-size:14px;opacity:.85">From 312 completed orders, after 10% commission</div>
       </div>
       <div class="row" style="gap:8px;padding:12px 16px 0">${kpi('This month (net)', '$3,960.40', '$4,400.45 sales')}${kpi('Commission', '10%', '$1,120.30 all time')}</div>
       <div class="blocktitle">All time</div>
       <div class="list">${li('Sales', '$11,203.00')}${li('Commission', '−$1,120.30')}${li('You earned', '$10,082.70', true)}</div>
       <div class="blocktitle">Payouts go to</div>
-      <div class="list"><div class="li"><span class="tile" style="background:${LIME}">${I('bank', 17, OLIVE, 2.2)}</span><div class="lbody"><span style="font-size:16px">EVC Plus · 61 ••• 4521</span></div></div></div>
+      <div class="list"><div class="li"><span class="tile" style="background:${GREEN}">${I('bank', 17, DEEP, 2.2)}</span><div class="lbody"><span style="font-size:16px">EVC Plus · 61 ••• 4521</span></div></div></div>
       <div class="blockfooter">Diyaar sends your payouts. To change the account, use Settings → Payouts on the Diyaar web panel.</div>
       ${tabbar(ctx, 'Earnings')}${homebar(ctx)}
     </div>`;
@@ -326,7 +326,7 @@
     const review = (n, ini, r, when, text, bg) => `
       <div style="border-radius:16px;border:1px solid rgba(0,0,0,.06);background:#fff;padding:16px">
         <div class="row" style="gap:12px">
-          <span class="circle" style="width:40px;height:40px;background:${bg};color:${OLIVE};font-size:14px;font-weight:600">${ini}</span>
+          <span class="circle" style="width:40px;height:40px;background:${bg};color:${DEEP};font-size:14px;font-weight:600">${ini}</span>
           <div style="flex:1"><div style="font-size:15px;font-weight:600">${n}</div><div class="row" style="gap:8px"><span class="row" style="gap:2px">${stars(r, 14)}</span><span style="font-size:12px" class="muted">${when}</span></div></div>
         </div>
         <div style="font-size:15px;line-height:1.38;margin-top:12px">${text}</div>
@@ -338,9 +338,9 @@
         <div style="text-align:center"><div class="tab" style="font-size:44px;font-weight:700;line-height:1;letter-spacing:-1px">4.8</div><div class="row" style="gap:2px;margin-top:8px">${stars(5, 14)}</div><div style="font-size:12px;margin-top:4px" class="muted">1,248 reviews</div></div>
         <div style="flex:1;display:flex;flex-direction:column;gap:5px">${dist.map(([n, p]) => `<div class="row" style="gap:8px;font-size:11px" class="muted"><span style="width:8px;color:rgba(0,0,0,.45)">${n}</span><span style="flex:1;height:6px;border-radius:3px;background:rgba(0,0,0,.05)"><span style="display:block;height:6px;border-radius:3px;background:#ff9500;width:${p}%"></span></span></div>`).join('')}</div>
       </div>
-      <div class="row" style="gap:8px;padding:14px 16px 4px">${chips.map((c, i) => `<span class="chip" style="font-size:14px;padding:7px 14px;${i === 0 ? `background:${LIME};color:${OLIVE}` : 'background:#fff;color:rgba(0,0,0,.7);box-shadow:0 0 0 1px rgba(0,0,0,.08)'}">${c}</span>`).join('')}</div>
+      <div class="row" style="gap:8px;padding:14px 16px 4px">${chips.map((c, i) => `<span class="chip" style="font-size:14px;padding:7px 14px;${i === 0 ? `background:${GREEN};color:${DEEP}` : 'background:#fff;color:rgba(0,0,0,.7);box-shadow:0 0 0 1px rgba(0,0,0,.08)'}">${c}</span>`).join('')}</div>
       <div style="display:flex;flex-direction:column;gap:8px;padding:8px 16px 0">
-        ${review('Faadumo Yusuf', 'FY', 5, '2h ago', 'Best shawarma in Hodan! It arrived hot and so fast 🔥', '#E6FF9E')}
+        ${review('Faadumo Yusuf', 'FY', 5, '2h ago', 'Best shawarma in Hodan! It arrived hot and so fast 🔥', '#EAFFED')}
         ${review('Mustafe Omar', 'MO', 5, 'Yesterday', 'The sambusa are amazing and the kids love the mango juice. We order every Friday.', '#FFE4D2')}
         ${review('Ayaan Hassan', 'AH', 4, '2 days ago', 'Delicious bariis and big portions. Will order again!', '#DCF1FF')}
       </div>
@@ -361,7 +361,7 @@
       <div class="blocktitle" style="padding-top:14px">Weekly schedule</div>
       <div class="list">
         ${days.map(([d, o, c, open, today]) => `<div class="li"><div class="lbody" style="padding:11px 0">
-          <div><div style="font-size:16px;${today ? 'font-weight:600' : ''}">${d}${today ? `<span style="margin-left:6px;font-size:12px;font-weight:600;color:${OLIVE};background:rgba(190,255,0,.35);border-radius:5px;padding:1px 6px">Today</span>` : ''}</div>
+          <div><div style="font-size:16px;${today ? 'font-weight:600' : ''}">${d}${today ? `<span style="margin-left:6px;font-size:12px;font-weight:600;color:${DEEP};background:rgba(0,231,132,.35);border-radius:5px;padding:1px 6px">Today</span>` : ''}</div>
             ${open ? `<div class="row" style="gap:8px;margin-top:8px">${pill(o)}<span class="muted">–</span>${pill(c)}</div>` : '<div class="muted" style="font-size:14px;margin-top:2px">Closed</div>'}</div>
           <span class="toggle ${open ? '' : 'off'}"></span></div></div>`).join('')}
       </div>

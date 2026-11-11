@@ -38,7 +38,8 @@ The app is set up to feel native:
 - **Splash screen:** stays up until the session is restored.
 - **Android back button:** closes an open sheet first, then goes back a page, and leaves the app from Home.
 
-Icon and splash sources are in `assets/` (lime `#BEFF00` with the Diyaar hand, and dark `#2B330F` for dark mode).
+Brand colours: green `#00E784`, deep teal `#00231F` (app icon, splash, dark surfaces) and mint `#EAFFED` (light cards and highlights).
+The logo lives in `logo/` as SVG (`diyaar-mark.svg`, `diyaar-icon.svg`). After changing it, run `npm run brand`: it renders `assets/`, the favicons and the store icon source from the SVGs, then regenerates the Android/iOS icons and splash screens.
 
 ## Screens
 

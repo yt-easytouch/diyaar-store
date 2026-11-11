@@ -7,7 +7,7 @@ import type { Order, OrderStatus } from "@/api";
 import { formatDateTime, formatMoney, formatTime } from "@/lib/format";
 import { haptic } from "@/lib/native";
 import { cn } from "@/lib/utils";
-import { ErrorBlock, IconTile, LIME_BUTTON, Loading, Screen } from "../ui";
+import { ErrorBlock, IconTile, BRAND_BUTTON, Loading, Screen } from "../ui";
 
 const PAYMENT: Record<Order["payment_method"], string> = { cash: "Cash on delivery", card: "Card", wallet: "Diyaar wallet", mobile_money: "Mobile money (EVC)" };
 const isPickup = (o: Order) => o.delivery_type.includes("pickup");
@@ -65,13 +65,13 @@ function ActionBar({ order }: { order: Order }) {
   let content: React.ReactNode = null;
   if (order.status === "confirming")
     content = (
-      <Button large colors={LIME_BUTTON} disabled={update.isPending} onClick={() => run("accepted")}>
+      <Button large colors={BRAND_BUTTON} disabled={update.isPending} onClick={() => run("accepted")}>
         Accept order
       </Button>
     );
   else if (order.status === "accepted")
     content = (
-      <Button large colors={LIME_BUTTON} disabled={update.isPending} onClick={() => run("preparing")}>
+      <Button large colors={BRAND_BUTTON} disabled={update.isPending} onClick={() => run("preparing")}>
         Start cooking
       </Button>
     );
@@ -83,7 +83,7 @@ function ActionBar({ order }: { order: Order }) {
     );
   else if (order.status === "ready" && isPickup(order))
     content = (
-      <Button large colors={LIME_BUTTON} disabled={update.isPending} onClick={() => run("completed")}>
+      <Button large colors={BRAND_BUTTON} disabled={update.isPending} onClick={() => run("completed")}>
         Picked up by customer
       </Button>
     );

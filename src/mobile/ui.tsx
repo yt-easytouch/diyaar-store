@@ -131,10 +131,10 @@ export function IconTile({ icon: Icon, className, size = "md" }: { icon: LucideI
 /** Blinkit-style flat card: white, thin border, almost no shadow. */
 export const CARD = "rounded-xl border border-black/[0.06] bg-white dark:border-white/10 dark:bg-[#1c1c1d]";
 
-export const BRAND = "#BEFF00";
+export const BRAND = "#00E784";
 
-/** Konsta filled buttons default to white text; on lime it needs the dark olive. */
-export const LIME_BUTTON = { fillTextIos: "text-primary-foreground", fillTextMaterial: "text-primary-foreground" };
+/** Konsta filled buttons default to white text; on the brand green it needs the deep teal. */
+export const BRAND_BUTTON = { fillTextIos: "text-primary-foreground", fillTextMaterial: "text-primary-foreground" };
 
 export function SectionTitle({ children, action, onAction }: { children: ReactNode; action?: string; onAction?: () => void }) {
   return (
@@ -240,7 +240,7 @@ export function ChipBar<T extends string>({ value, onChange, items }: { value: T
 }
 
 /** Thumbnail for products (photo or coloured initials). */
-const THUMB = ["bg-[#34c759]", "bg-[#ff9500]", "bg-[#5856d6]", "bg-[#ff2d55]", "bg-[#007aff]", "bg-[#2B330F]"];
+const THUMB = ["bg-[#34c759]", "bg-[#ff9500]", "bg-[#5856d6]", "bg-[#ff2d55]", "bg-[#007aff]", "bg-[#00231F]"];
 export function Thumb({ id, label, image, className }: { id: string; label: string; image?: string; className?: string }) {
   if (image) return <img src={image} alt="" className={cn("h-12 w-12 rounded-xl object-cover", className)} />;
   const color = THUMB[id.charCodeAt(id.length - 1) % THUMB.length];

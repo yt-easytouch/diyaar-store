@@ -13,7 +13,7 @@ export function BannerCard({ banner: b, badge, onClick, className }: { banner: B
       type="button"
       onClick={onClick}
       disabled={!onClick}
-      style={b.image ? undefined : { background: b.background ?? "linear-gradient(135deg, #2aa898, #19766c)" }}
+      style={b.image ? undefined : { background: b.background ?? "linear-gradient(135deg, #00684f, #00231F)" }}
       className={cn("relative flex h-[140px] w-full items-end overflow-hidden rounded-2xl bg-black/5 p-4 text-left text-white transition-transform enabled:active:scale-[0.98] dark:bg-white/10", className)}
     >
       {b.image && <img src={b.image} alt="" loading="lazy" decoding="async" className="pointer-events-none absolute inset-0 h-full w-full object-cover" />}
@@ -26,7 +26,7 @@ export function BannerCard({ banner: b, badge, onClick, className }: { banner: B
           </span>
         </>
       )}
-      {badge && <span className="absolute left-3 top-3 rounded-md bg-[#BEFF00] px-1.5 text-[11px] font-extrabold uppercase leading-[18px] text-[#2B330F]">{badge}</span>}
+      {badge && <span className="absolute left-3 top-3 rounded-md bg-[#00E784] px-1.5 text-[11px] font-extrabold uppercase leading-[18px] text-[#00231F]">{badge}</span>}
     </button>
   );
 }

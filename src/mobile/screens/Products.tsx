@@ -173,7 +173,7 @@ export default function ProductsScreen() {
           haptic.tap();
           setMenuOpen(true);
         }}
-        className="hide-on-kb fixed right-4 z-20 bottom-[calc(6.5rem+env(safe-area-inset-bottom))] flex h-11 items-center gap-1.5 rounded-xl bg-primary pl-3 pr-4 text-[15px] font-bold text-primary-foreground shadow-[0_8px_20px_-8px_rgba(43,51,15,0.55)] transition-transform active:scale-95"
+        className="hide-on-kb fixed right-4 z-20 bottom-[calc(6.5rem+env(safe-area-inset-bottom))] flex h-11 items-center gap-1.5 rounded-xl bg-primary pl-3 pr-4 text-[15px] font-bold text-primary-foreground shadow-[0_8px_20px_-8px_rgba(0,35,31,0.55)] transition-transform active:scale-95"
       >
         <Plus className="h-5 w-5" strokeWidth={2.5} />
         Add item

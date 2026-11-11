@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import { useTheme } from "next-themes";
 import { Area, AreaChart, ResponsiveContainer, XAxis } from "recharts";
 import { ChefHat, ChevronDown, Clock, PackageCheck, PackagePlus, ReceiptText, Search, ShoppingBag, Star, Users } from "lucide-react";
-import limeHand from "@/assets/logo-hand-lime.png";
+import brandMark from "@/assets/diyaar-mark.svg";
 import { useBanners, useCategories, useDashboard, useOrderCounts, useProducts, useSetStoreOpen, useStore } from "@/hooks/queries";
 import { formatMoney, formatNumber, initials, timeAgo } from "@/lib/format";
 import { haptic, setStatusBarTheme } from "@/lib/native";
@@ -107,21 +107,21 @@ export default function HomeScreen() {
       <div
         aria-hidden={!collapsed}
         className={cn(
-          "fixed inset-x-0 top-0 z-40 bg-gradient-to-r from-[#219186] to-[#0f4f48] px-4 pb-2.5 pt-[calc(env(safe-area-inset-top)+6px)] text-white shadow-[0_8px_24px_-12px_rgba(15,79,72,0.6)] transition-all duration-300 ease-out",
+          "fixed inset-x-0 top-0 z-40 bg-gradient-to-r from-[#003a31] to-[#00231F] px-4 pb-2.5 pt-[calc(env(safe-area-inset-top)+6px)] text-white shadow-[0_8px_24px_-12px_rgba(0,35,31,0.6)] transition-all duration-300 ease-out",
           collapsed ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-full opacity-0",
         )}
       >
         <div className="flex items-center gap-2.5">
-          <button onClick={() => go("/store")} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[12px] font-extrabold text-[#219186]">
+          <button onClick={() => go("/store")} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#00E784] text-[12px] font-extrabold text-[#00231F]">
             {store ? initials(store.store_name) : ""}
           </button>
           <button onClick={() => go("/store")} className="min-w-0 flex-1 text-left">
             <p className="truncate text-[15px] font-extrabold leading-tight">{store?.store_name}</p>
             {newOrders > 0 ? (
-              <p className="flex items-center gap-1.5 truncate text-[12px] font-bold text-[#BEFF00]">
+              <p className="flex items-center gap-1.5 truncate text-[12px] font-bold text-[#00E784]">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#BEFF00] opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#BEFF00]" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00E784] opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00E784]" />
                 </span>
                 {newOrders} new {newOrders === 1 ? "order" : "orders"} waiting
               </p>
@@ -130,7 +130,7 @@ export default function HomeScreen() {
             )}
           </button>
           <button onClick={toggleOpen} className="inline-flex items-center gap-1.5 rounded-lg bg-white/15 px-2.5 py-1.5 text-[12px] font-extrabold active:bg-white/25">
-            <span className={cn("h-2 w-2 rounded-full", open ? "bg-[#BEFF00]" : "bg-[#ff4d4f]")} />
+            <span className={cn("h-2 w-2 rounded-full", open ? "bg-[#00E784]" : "bg-[#ff4d4f]")} />
             {open ? "Open" : "Closed"}
           </button>
           <button onClick={() => go("/orders?tab=history")} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15" aria-label="Search">
@@ -140,11 +140,11 @@ export default function HomeScreen() {
       </div>
 
       {/* ── Brand header ───────────────────────────────── */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#3fd0bd] via-[#219186] to-[#0f4f48] px-4 pb-14 pt-[calc(env(safe-area-inset-top)+10px)] text-white">
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#00684f] via-[#003a31] to-[#00231F] px-4 pb-14 pt-[calc(env(safe-area-inset-top)+10px)] text-white">
         {/* bottom of the header fades into the page */}
         <span className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-[#f7f9f9]/70 to-[#f7f9f9] dark:via-black/70 dark:to-black" />
         {/* soft glows on the gradient */}
-        <span className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-[#BEFF00]/20 blur-3xl" />
+        <span className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-[#00E784]/20 blur-3xl" />
         <span className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
         <div ref={heroRef} className="relative origin-top will-change-transform">
         <div className="relative flex items-start gap-3">
@@ -157,7 +157,7 @@ export default function HomeScreen() {
             </p>
           </button>
           <button onClick={() => go("/store")} className="shrink-0 active:scale-95" aria-label="Store profile">
-            <img src={limeHand} alt="Diyaar" className="h-10 w-10 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" draggable={false} />
+            <img src={brandMark} alt="Diyaar" className="h-10 w-10 object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" draggable={false} />
           </button>
         </div>
 
@@ -167,13 +167,13 @@ export default function HomeScreen() {
             <Clock className="h-4 w-4" /> {store?.preparation_time ?? "–"} min prep
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-lg bg-white/15 px-2.5 py-1.5 text-[13px] font-bold">
-            <Star className="h-4 w-4 fill-[#BEFF00] text-[#BEFF00]" /> {data ? data.kpis.rating.value.toFixed(1) : "–"}
+            <Star className="h-4 w-4 fill-[#00E784] text-[#00E784]" /> {data ? data.kpis.rating.value.toFixed(1) : "–"}
           </span>
           <button
             onClick={toggleOpen}
             className="ml-auto inline-flex items-center gap-2 rounded-lg bg-white/15 px-3 py-1.5 text-[13px] font-extrabold text-white transition-colors active:bg-white/25"
           >
-            <span className={cn("h-2 w-2 rounded-full", open ? "bg-[#BEFF00]" : "bg-[#ff4d4f]")} />
+            <span className={cn("h-2 w-2 rounded-full", open ? "bg-[#00E784]" : "bg-[#ff4d4f]")} />
             {open ? "Open" : "Closed"}
           </button>
         </div>
@@ -181,7 +181,7 @@ export default function HomeScreen() {
         </div>
 
         {/* Search */}
-        <button ref={searchRef} onClick={() => go("/orders?tab=history")} className="relative z-10 mt-3 flex h-11 w-full items-center gap-2.5 rounded-xl bg-white px-3.5 text-left text-[15px] text-black/45 shadow-[0_6px_20px_-8px_rgba(15,79,72,0.35)]">
+        <button ref={searchRef} onClick={() => go("/orders?tab=history")} className="relative z-10 mt-3 flex h-11 w-full items-center gap-2.5 rounded-xl bg-white px-3.5 text-left text-[15px] text-black/45 shadow-[0_6px_20px_-8px_rgba(0,35,31,0.35)]">
           <Search className="h-5 w-5 text-black/60" />
           Search orders, customers…
         </button>
@@ -232,12 +232,12 @@ export default function HomeScreen() {
                   <AreaChart data={data.trend} margin={{ top: 4, left: 0, right: 0, bottom: 0 }}>
                     <defs>
                       <linearGradient id="home-rev" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#BEFF00" stopOpacity={0.55} />
-                        <stop offset="100%" stopColor="#BEFF00" stopOpacity={0} />
+                        <stop offset="0%" stopColor="#00E784" stopOpacity={0.55} />
+                        <stop offset="100%" stopColor="#00E784" stopOpacity={0} />
                       </linearGradient>
                     </defs>
                     <XAxis dataKey="date" tickFormatter={(d) => format(new Date(d), "EEE")} tickLine={false} axisLine={false} fontSize={10} stroke="#9a9a9f" interval={0} padding={{ left: 12, right: 12 }} />
-                    <Area type="monotone" dataKey="revenue" stroke={resolvedTheme === "dark" ? "#BEFF00" : "#2B330F"} strokeWidth={2.5} fill="url(#home-rev)" dot={false} activeDot={false} />
+                    <Area type="monotone" dataKey="revenue" stroke={resolvedTheme === "dark" ? "#00E784" : "#00231F"} strokeWidth={2.5} fill="url(#home-rev)" dot={false} activeDot={false} />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>

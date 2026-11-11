@@ -9,7 +9,7 @@ import type { Order, OrderStatus } from "@/api";
 import { formatMoney, formatDay, formatTime, initials } from "@/lib/format";
 import { haptic } from "@/lib/native";
 import { cn } from "@/lib/utils";
-import { Empty, ErrorBlock, LIME_BUTTON, Loading, Screen, SearchField } from "../ui";
+import { Empty, ErrorBlock, BRAND_BUTTON, Loading, Screen, SearchField } from "../ui";
 
 type Stage = "confirming" | "accepted" | "preparing" | "ready";
 
@@ -234,7 +234,7 @@ function History() {
           ))}
           {data.total > page * 30 && (
             <div className="px-4 pt-4">
-              <Button large colors={LIME_BUTTON} disabled={isFetching} onClick={() => setPage((p) => p + 1)}>
+              <Button large colors={BRAND_BUTTON} disabled={isFetching} onClick={() => setPage((p) => p + 1)}>
                 {isFetching ? "Loading…" : "Load more"}
               </Button>
             </div>

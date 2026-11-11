@@ -1,4 +1,4 @@
-# 🫰 Diyaar Store: Store Listing
+# Diyaar Store: Store Listing
 
 Copy-paste text for **App Store Connect** and **Google Play Console**.
 Character counts are shown as `(used/limit)`. Fields marked **TODO** need a real value before you submit.
@@ -42,7 +42,7 @@ Orders, menu & sales, all set
 ### Promotional text `(152/170)`
 *Can be changed any time without a new build.*
 ```
-New orders ring in, you tap Accept. Update prices, mark items sold out, follow today's sales and your payout, and open or close your store in one tap. 🫰
+New orders ring in, you tap Accept. Update prices, mark items sold out, follow today's sales and your payout, and open or close your store in one tap. ⚡
 ```
 
 ### Keywords `(96/100)`
@@ -97,7 +97,7 @@ Questions? Visit diyaar.so or contact Diyaar support.
 
 ### What's New (release notes) `(≤4000)`
 ```
-Welcome to Diyaar Store! 🫰
+Welcome to Diyaar Store! 💚
 • Accept orders and move them from Cooking to Ready
 • Update your menu, prices and stock on the go
 • Follow today's sales, your payout and your reviews
@@ -168,7 +168,7 @@ Diyaar Store
 
 ### Short description `(73/80)`
 ```
-Accept orders, update your menu & watch your sales grow, all in one app 🫰
+Accept orders, update your menu & watch your sales grow, all in one app 💚
 ```
 *Plain alternative without emoji (78/80):*
 ```
@@ -235,7 +235,7 @@ None needed. The Android app only requests `INTERNET`; photos are picked through
 | # | File | Headline | Sub-line | Screen shown |
 |---|---|---|---|---|
 | 1 | `01-your-store` | Your whole store **in your pocket** | Orders, menu, sales & earnings in one app | Home |
-| 2 | `02-accept-orders` | Accept orders **in a snap** 🫰 | New orders ring in. Tap Accept and get cooking | Orders board |
+| 2 | `02-accept-orders` | Accept orders **in a snap** ⚡ | New orders ring in. Tap Accept and get cooking | Orders board |
 | 3 | `03-kitchen-to-door` | From kitchen to **doorstep** | Track every order from cooking to delivered | Order details |
 | 4 | `04-menu` | Update your menu **in seconds** | Add items, edit prices & mark sold out | Menu items |
 | 5 | `05-earnings` | Watch your sales **grow** 💸 | See your payout and every dollar you earn | Earnings |

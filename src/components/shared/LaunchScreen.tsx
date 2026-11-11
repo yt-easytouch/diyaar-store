@@ -1,66 +1,46 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Heart } from "lucide-react";
-import { cn } from "@/lib/utils";
-import darkHand from "@/assets/logo-hand-dark.png";
-import limeHand from "@/assets/logo-hand-lime.png";
+import mark from "@/assets/diyaar-mark.svg";
 
-// Same colours as the native splash (assets/splash*.png): Diyaar lime with the dark hand, or olive with the lime hand in dark mode.
-export const LAUNCH_DARK = typeof window !== "undefined" && window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+/** Same colour as the native splash (assets/splash*.png), so the hand-off is seamless. */
+export const LAUNCH_BG = "#00231F";
 
-/** Little hearts that pop out of the finger-heart and float away. */
-const HEARTS = [
-  { x: -34, delay: 0.35, size: 18 },
-  { x: 8, delay: 0.75, size: 24 },
-  { x: 40, delay: 1.15, size: 16 },
-];
+/** Rings that ripple out from behind the mark, like a new order ringing in. */
+const RINGS = [0, 0.7];
 
-/** The animated launch screen: the hand bobs, gives a little snap, and sends hearts up. */
+/** The animated launch screen: the mark springs in, then breathes while green rings ripple out. */
 export function LaunchScreen() {
   const still = useReducedMotion();
   return (
     <motion.div
       className="fixed inset-0 z-[90] flex items-center justify-center"
-      style={{ backgroundColor: LAUNCH_DARK ? "#2B330F" : "#BEFF00" }}
+      style={{ backgroundColor: LAUNCH_BG }}
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.35, ease: "easeOut" } }}
     >
-      {/* The hand pops in from the middle with a little bounce, then keeps moving. */}
       <motion.div
-        className="relative"
-        style={{ width: "16vh", height: "16vh" }}
-        initial={still ? false : { opacity: 0, scale: 0.5 }}
+        className="relative flex items-center justify-center"
+        style={{ width: "15vh", height: "15vh" }}
+        initial={still ? false : { opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 16 }}
+        transition={{ type: "spring", stiffness: 240, damping: 16 }}
       >
         {!still &&
-          HEARTS.map((h, i) => (
+          RINGS.map((delay) => (
             <motion.span
-              key={i}
-              className={cn("absolute left-1/2 top-[8%]", LAUNCH_DARK ? "text-[#BEFF00]" : "text-[#2B330F]")}
-              initial={{ opacity: 0, x: 0, y: 0, scale: 0.4 }}
-              animate={{ opacity: [0, 1, 1, 0], x: h.x, y: -70, scale: [0.4, 1.1, 1, 0.8], rotate: h.x / 3 }}
-              transition={{ duration: 1.3, delay: h.delay, ease: "easeOut", repeat: Infinity, repeatDelay: 0.6 }}
-            >
-              <Heart className="fill-current" style={{ width: h.size, height: h.size }} strokeWidth={0} />
-            </motion.span>
+              key={delay}
+              className="absolute inset-0 rounded-full border-2 border-[#00E784]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: [0, 0.5, 0], scale: [0.8, 1.9] }}
+              transition={{ duration: 1.4, delay: 0.3 + delay, ease: "easeOut", repeat: Infinity, repeatDelay: 0 }}
+            />
           ))}
         <motion.img
-          src={LAUNCH_DARK ? limeHand : darkHand}
+          src={mark}
           alt="Diyaar"
-          className="relative h-full w-full select-none"
+          className="relative h-[86%] w-[86%] select-none object-contain"
           draggable={false}
-          style={{ transformOrigin: "50% 85%" }}
-          animate={
-            still
-              ? undefined
-              : {
-                  // a gentle bob, then a quick "snap" wiggle
-                  y: [0, -6, 0, 0, 0, 0],
-                  rotate: [0, 0, -9, 7, -3, 0],
-                  scale: [1, 1.03, 1.06, 1, 1, 1],
-                }
-          }
-          transition={{ duration: 1.4, times: [0, 0.25, 0.45, 0.6, 0.75, 1], ease: "easeInOut", repeat: Infinity, repeatDelay: 0.4 }}
+          animate={still ? undefined : { scale: [1, 1.06, 1] }}
+          transition={{ duration: 1.4, ease: "easeInOut", repeat: Infinity, delay: 0.3 }}
         />
       </motion.div>
     </motion.div>
